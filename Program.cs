@@ -91,7 +91,10 @@ namespace GameLauncher
                 arguments += "-skill 1 ";
             else if (skill2RadioButton.Checked)
                 arguments += "-skill 2 ";
-            // Add conditions for skill3RadioButton, skill4RadioButton, skill5RadioButton
+            else if (skill3RadioButton.Checked)
+                arguments += "-skill 3 ";
+            else if (skill4RadioButton.Checked)
+                arguments += "-skill 4 ";
 
             if (levelsDropdown.SelectedIndex >= 0)
                 arguments += $"-warp {levelsDropdown.SelectedIndex + 1} ";
