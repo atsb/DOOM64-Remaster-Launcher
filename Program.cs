@@ -116,7 +116,7 @@ namespace GameLauncher
 
             if (!string.IsNullOrEmpty(wadFileTextBox.Text))
             {
-                arguments += $"-file {wadFileTextBox.Text}";
+                arguments += $"-file {wadFileTextBox.Text} ";
             }
 
             // Execute the game executable with the generated arguments
