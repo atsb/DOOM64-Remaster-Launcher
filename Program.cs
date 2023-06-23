@@ -70,8 +70,10 @@ namespace GameLauncher
         /* MAP LIST - POPULATES THE DROPDOWN */
         private void InitializeLevelsDropdown()
         {
+            levelsDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
             levelsDropdown.Items.AddRange(new[]
             {
+                "NONE",
                 "MAP01", "MAP02", "MAP03", "MAP04", "MAP05", "MAP06",
                 "MAP07", "MAP08", "MAP09", "MAP10","MAP11", "MAP12",
                 "MAP13", "MAP14", "MAP15", "MAP16", "MAP17", "MAP18",
@@ -80,6 +82,7 @@ namespace GameLauncher
                 "MAP31", "MAP32", "MAP33", "MAP34", "MAP35", "MAP36",
                 "MAP37", "MAP38", "MAP39", "MAP40",
             });
+            levelsDropdown.SelectedIndex = 0;
         }
 
         /* STARTS DOOM64 AND ADDS PARAMETERS */
@@ -97,7 +100,7 @@ namespace GameLauncher
             else if (skill4RadioButton.Checked)
                 arguments += "-skill 4 ";
 
-            if (levelsDropdown.SelectedIndex >= 0)
+            if (levelsDropdown.SelectedIndex > 0)
                 arguments += $"-warp {levelsDropdown.SelectedIndex + 1} ";
 
             if (nomonstersCheckBox.Checked)
@@ -370,9 +373,9 @@ namespace GameLauncher
             respawnCheckBox.ForeColor=SystemColors.Control;
             respawnCheckBox.Location=new Point(316, 228);
             respawnCheckBox.Name="respawnCheckBox";
-            respawnCheckBox.Size=new Size(177, 28);
+            respawnCheckBox.Size=new Size(197, 28);
             respawnCheckBox.TabIndex=0;
-            respawnCheckBox.Text="Repawning Monsters";
+            respawnCheckBox.Text="Respawning Monsters";
             respawnCheckBox.UseVisualStyleBackColor=false;
             // 
             // wadFileTextBox

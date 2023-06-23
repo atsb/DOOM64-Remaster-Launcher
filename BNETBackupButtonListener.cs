@@ -15,16 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-using System;
-using System.Collections;
-using System.Configuration;
-using System.Diagnostics;
 using System.IO;
-using System.IO.Compression;
-using System.Windows.Forms;
-using System.Security.Cryptography;
-using System.Xml.Linq;
-using DOOM64_Launcher;
 
 namespace GameLauncher
 {
@@ -36,50 +27,17 @@ namespace GameLauncher
             if (File.Exists(GlobalDeclarations.BNETKPF))
             {
                 string filePath = GlobalDeclarations.BNETKPF;
-                string expectedHash = "F97BF88B1AB7364C089F533B5B8D1AC574FEF6165D066258308688F64AA46801";
 
-                using (var sha256 = SHA256.Create())
+                if (File.Exists(GlobalDeclarations.BNETKPFORIG))
                 {
-                    using (var stream = File.OpenRead(filePath))
-                    {
-                        byte[] computedHash = sha256.ComputeHash(stream);
-
-                        // Convert the expected hash from hex to byte
-                        byte[] expectedHashBytes = new byte[expectedHash.Length / 2];
-                        for (int i = 0; i < expectedHashBytes.Length; i++)
-                        {
-                            expectedHashBytes[i] = Convert.ToByte(expectedHash.Substring(i * 2, 2), 16);
-                        }
-
-                        // Compare the hash
-                        if (StructuralComparisons.StructuralEqualityComparer.Equals(computedHash, expectedHashBytes))
-                        {
-                            if (File.Exists(GlobalDeclarations.BNETKPFORIG))
-                            {
-                                MessageBox.Show("INFORMATION: BNet.kpf backup already exists",
-                                                "KPF Backup",
-                                                 MessageBoxButtons.OK,
-                                                 MessageBoxIcon.Information);
-                            } else {
-                                File.Copy(GlobalDeclarations.BNETKPF, GlobalDeclarations.BNETKPFORIG);
-                            }
-
-                            if (File.Exists(GlobalDeclarations.BNETKPFORIG))
-                            {
-                                MessageBox.Show("SUCCESS: BNet.kpf has been backed up.",
+                    MessageBox.Show("INFORMATION: BNet.kpf backup already exists",
                                     "KPF Backup",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("ERROR: BNet.kpf hash does not match the expected hash.",
-                                    "KPF Hash Error",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                        }
-                    }
+                                     MessageBoxButtons.OK,
+                                     MessageBoxIcon.Information);
+                }
+                else
+                {
+                    File.Copy(GlobalDeclarations.BNETKPF, GlobalDeclarations.BNETKPFORIG);
                 }
             }
         }
