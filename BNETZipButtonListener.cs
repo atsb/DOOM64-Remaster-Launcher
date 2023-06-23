@@ -52,10 +52,7 @@ namespace GameLauncher
                     dir.Delete(true);
                 }
                 Directory.Delete(GlobalDeclarations.BNETDIR);
-                MessageBox.Show("SUCCESS: BNet.kpf has been created!",
-                    "KPF Creation",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                AutoClosingMessageBox.Show("SUCCESS: BNet.kpf has been created!", "KPF Creation", 3000);
             }
         }
     }

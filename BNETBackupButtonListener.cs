@@ -30,10 +30,7 @@ namespace GameLauncher
 
                 if (File.Exists(GlobalDeclarations.BNETKPFORIG))
                 {
-                    MessageBox.Show("INFORMATION: BNet.kpf backup already exists",
-                                    "KPF Backup",
-                                     MessageBoxButtons.OK,
-                                     MessageBoxIcon.Information);
+                    AutoClosingMessageBox.Show("INFORMATION: BNet.kpf backup already exist.", "KPF Backup", 3000);
                 }
                 else
                 {

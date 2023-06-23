@@ -125,11 +125,8 @@ namespace GameLauncher
 
             if (!string.IsNullOrEmpty(userBNetTextBox.Text) || !string.IsNullOrEmpty(userContentTextBox.Text))
             {
-                MessageBox.Show("Please be patient while the automated process of copying and packing the KPF files is done. " +
-                    "You will be prompted during each step.",
-                "KPF Patching in Progress",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                AutoClosingMessageBox.Show("Please be patient while the automated process of copying and packing the KPF files is done." +
+                    "You will be prompted during each step.", "KPF Patching in Progress", 3000);
             }
 
             if (!string.IsNullOrEmpty(userContentTextBox.Text))
@@ -148,10 +145,7 @@ namespace GameLauncher
 
             if (!string.IsNullOrEmpty(userBNetTextBox.Text) || !string.IsNullOrEmpty(userContentTextBox.Text))
             {
-                MessageBox.Show("DOOM64 will now start.",
-                            "Starting DOOM64",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                AutoClosingMessageBox.Show("DOOM64 will now start.", "Starting DOOM64", 3000);
             }
 
             // Execute the game executable with the generated arguments

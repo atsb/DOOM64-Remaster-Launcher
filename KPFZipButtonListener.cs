@@ -52,10 +52,7 @@ namespace GameLauncher
                     dir.Delete(true);
                 }
                 Directory.Delete(GlobalDeclarations.DOOM64DIR);
-                MessageBox.Show("SUCCESS: Doom64.kpf has been created!",
-                    "KPF Creation",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                AutoClosingMessageBox.Show("SUCCESS: Doom64.kpf has been created!", "KPF Creation", 3000);
             }
         }
     }

@@ -36,26 +36,17 @@ namespace GameLauncher
             {
                 File.Delete(GlobalDeclarations.DOOM64KPF);
                 File.Copy(GlobalDeclarations.DOOM64KPFORIG, GlobalDeclarations.DOOM64KPF);
-                MessageBox.Show("SUCCESS: Doom64.kpf has been restored.",
-                    "KPF Restore",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                AutoClosingMessageBox.Show("SUCCESS: Doom64.kpf has been restored.", "KPF Restore", 3000);
             }
             if (File.Exists(GlobalDeclarations.BNETKPFORIG))
             {
                 File.Delete(GlobalDeclarations.BNETKPF);
                 File.Copy(GlobalDeclarations.BNETKPFORIG, GlobalDeclarations.BNETKPF);
-                MessageBox.Show("SUCCESS: BNet.kpf has been restored.",
-                    "KPF Restore",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                AutoClosingMessageBox.Show("SUCCESS: BNet.kpf has been restored.", "KPF Restore", 3000);
             }
             else if (!File.Exists(GlobalDeclarations.BNETKPFORIG) || !File.Exists(GlobalDeclarations.DOOM64KPFORIG))
             {
-                MessageBox.Show("ERROR: Backup KPF's are missing.",
-                    "KPF Missing",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                AutoClosingMessageBox.Show("ERROR: Backup KPF's are missing.", "KPF Missing", 3000);
             }
         }
     }

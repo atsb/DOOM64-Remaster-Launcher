@@ -30,10 +30,7 @@ namespace GameLauncher
 
                 if (File.Exists(GlobalDeclarations.DOOM64KPFORIG))
                 {
-                    MessageBox.Show("INFORMATION: Doom64.kpf backup already exists.",
-                                    "KPF Backup",
-                                     MessageBoxButtons.OK,
-                                     MessageBoxIcon.Information);
+                    AutoClosingMessageBox.Show("INFORMATION: Doom64.kpf backup already exists.", "KPF Backup", 3000);
                 }
                 else
                 {
