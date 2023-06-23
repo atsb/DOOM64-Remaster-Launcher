@@ -8,4 +8,4 @@ You must choose the directory that contains the 'gfx' etc..  directories.
 # Credits
 OpenRift - Logo and Icon as well as functionality changes for users (automated patch process)
 NightDive and Kaiser - for the Remaster and KEX Engine <3
-DOOM64 Discord
+## [DOOM64 Discord](https://discord.gg/TzgscZcdBm)
