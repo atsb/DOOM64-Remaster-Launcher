@@ -1,4 +1,4 @@
-# DOOM64-Remaster-Launcher
+# KEX DOOM64-Remaster-Launcher
 A Launcher for DOOM64 that is actually good
 
 # Note
@@ -7,5 +7,5 @@ You must choose the directory that contains the 'gfx' etc..  directories.
 
 # Credits
 OpenRift - Logo and Icon as well as functionality changes for users (automated patch process)
-NightDive and Kaiser - for the Remaster and KEX <3
+NightDive and Kaiser - for the Remaster and KEX Engine <3
 DOOM64 Discord
