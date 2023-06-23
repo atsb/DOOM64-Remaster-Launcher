@@ -10,25 +10,19 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <StartupObject></StartupObject>
     <UseWPF>True</UseWPF>
-    <Title>DOOM64 Launcher</Title>
-    <Description>A Launcher for the DOOM64 Remaster</Description>
+    <Title>KDL</Title>
+    <Description>A Launcher for the KEX DOOM64 Remaster</Description>
     <Copyright>(C) 2023 Gibbon</Copyright>
-    <PackageIcon>bg.png</PackageIcon>
-    <ApplicationIcon>bg.ico</ApplicationIcon>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.0.1</FileVersion>
-    <Version>1.0.1</Version>
+    <PackageIcon>KDL_ICON.png</PackageIcon>
+    <ApplicationIcon>KDL_ICON.ico</ApplicationIcon>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
+    <Version>1.0.2</Version>
+    <PackageId>KDL</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="bg.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\Downloads\bg.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+    <Content Include="KDL_ICON.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +46,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="KDL_ICON.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

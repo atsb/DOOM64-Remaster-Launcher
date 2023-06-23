@@ -27,7 +27,10 @@ namespace GameLauncher
     {
         public const string GameExecutable = "DOOM64_x64.exe";
         public const string DOOM64KPF = "Doom64.kpf";
-        public const string DOOM64KPFORIG = "Doom64.kpf_orig";
+        public const string DOOM64KPFORIG = "Doom64.kpf_original";
         public const string DOOM64DIR = "Doom64";
+        public const string BNETDIR = "BNet";
+        public const string BNETKPF = "BNet.kpf";
+        public const string BNETKPFORIG = "BNet.kpf_original";
     }
 }

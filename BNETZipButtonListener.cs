@@ -27,21 +27,21 @@ using System.Xml.Linq;
 
 namespace GameLauncher
 {
-    public static class KPFZipButtonListener
+    public static class BNETZipButtonListener
     {
-        public static void kpfZipButton_Click()
+        public static void bNetZipButton_Click()
         {
-            System.IO.DirectoryInfo deleteEntireDirectory = new DirectoryInfo(GlobalDeclarations.DOOM64DIR);
+            System.IO.DirectoryInfo deleteEntireDirectory = new DirectoryInfo(GlobalDeclarations.BNETDIR);
 
-            // If the Doom64.kpf exists, delete it
-            if (File.Exists(GlobalDeclarations.DOOM64KPF))
+            // If the BNet.kpf exists, delete it
+            if (File.Exists(GlobalDeclarations.BNETKPF))
             {
-                File.Delete(GlobalDeclarations.DOOM64KPF);
+                File.Delete(GlobalDeclarations.BNETKPF);
             }
 
-            // Zip the Doom64 directory into Doom64.kpf
-            ZipDirectory.ZipKPFDirectory(GlobalDeclarations.DOOM64DIR, GlobalDeclarations.DOOM64KPF);
-            if (File.Exists(GlobalDeclarations.DOOM64KPF))
+            // Zip the BNet directory into BNet.kpf
+            ZipDirectory.ZipKPFDirectory(GlobalDeclarations.BNETDIR, GlobalDeclarations.BNETKPF);
+            if (File.Exists(GlobalDeclarations.BNETKPF))
             {
                 foreach (FileInfo file in deleteEntireDirectory.GetFiles())
                 {
@@ -51,8 +51,8 @@ namespace GameLauncher
                 {
                     dir.Delete(true);
                 }
-                Directory.Delete(GlobalDeclarations.DOOM64DIR);
-                MessageBox.Show("SUCCESS: Doom64.kpf has been created!",
+                Directory.Delete(GlobalDeclarations.BNETDIR);
+                MessageBox.Show("SUCCESS: BNet.kpf has been created!",
                     "KPF Creation",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);

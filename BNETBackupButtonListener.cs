@@ -28,15 +28,15 @@ using DOOM64_Launcher;
 
 namespace GameLauncher
 {
-    public static class KPFBackupButtonListener
+    public static class BNETBackupButtonListener
     {
-        public static void backupOriginalKPFButton_Click()
+        public static void backupOriginalBNetButton_Click()
         {
             // Copy the kpf file and rename it
-            if (File.Exists(GlobalDeclarations.DOOM64KPF))
+            if (File.Exists(GlobalDeclarations.BNETKPF))
             {
-                string filePath = GlobalDeclarations.DOOM64KPF;
-                string expectedHash = "A1113F6B5F878AC90961D438A70FBB0A3ECB60C071A6C1F0C7867A0E5AD43F32";
+                string filePath = GlobalDeclarations.BNETKPF;
+                string expectedHash = "F97BF88B1AB7364C089F533B5B8D1AC574FEF6165D066258308688F64AA46801";
 
                 using (var sha256 = SHA256.Create())
                 {
@@ -54,19 +54,19 @@ namespace GameLauncher
                         // Compare the hash
                         if (StructuralComparisons.StructuralEqualityComparer.Equals(computedHash, expectedHashBytes))
                         {
-                            if (File.Exists(GlobalDeclarations.DOOM64KPFORIG))
+                            if (File.Exists(GlobalDeclarations.BNETKPFORIG))
                             {
-                                MessageBox.Show("INFORMATION: Doom64.kpf backup already exists",
+                                MessageBox.Show("INFORMATION: BNet.kpf backup already exists",
                                                 "KPF Backup",
                                                  MessageBoxButtons.OK,
                                                  MessageBoxIcon.Information);
                             } else {
-                                File.Copy(GlobalDeclarations.DOOM64KPF, GlobalDeclarations.DOOM64KPFORIG);
+                                File.Copy(GlobalDeclarations.BNETKPF, GlobalDeclarations.BNETKPFORIG);
                             }
 
-                            if (File.Exists(GlobalDeclarations.DOOM64KPFORIG))
+                            if (File.Exists(GlobalDeclarations.BNETKPFORIG))
                             {
-                                MessageBox.Show("SUCCESS: Doom64.kpf has been backed up.",
+                                MessageBox.Show("SUCCESS: BNet.kpf has been backed up.",
                                     "KPF Backup",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
@@ -74,7 +74,7 @@ namespace GameLauncher
                         }
                         else
                         {
-                            MessageBox.Show("ERROR: Doom64.kpf hash does not match the expected hash.",
+                            MessageBox.Show("ERROR: BNet.kpf hash does not match the expected hash.",
                                     "KPF Hash Error",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);

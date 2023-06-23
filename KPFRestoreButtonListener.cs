@@ -41,9 +41,18 @@ namespace GameLauncher
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-            else
+            if (File.Exists(GlobalDeclarations.BNETKPFORIG))
             {
-                MessageBox.Show("ERROR: Doom64.kpf_orig is missing.",
+                File.Delete(GlobalDeclarations.BNETKPF);
+                File.Copy(GlobalDeclarations.BNETKPFORIG, GlobalDeclarations.BNETKPF);
+                MessageBox.Show("SUCCESS: BNet.kpf has been restored.",
+                    "KPF Restore",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else if (!File.Exists(GlobalDeclarations.BNETKPFORIG) || !File.Exists(GlobalDeclarations.DOOM64KPFORIG))
+            {
+                MessageBox.Show("ERROR: Backup KPF's are missing.",
                     "KPF Missing",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);

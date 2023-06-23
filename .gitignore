@@ -1,0 +1,11 @@
+
+*.v2
+*.vsidx
+*.lock
+.vs/DOOM64 Launcher/v17/.suo
+*.bin
+*.json
+*.dll
+*.config
+*.exe
+*.pdb
