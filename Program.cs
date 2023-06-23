@@ -101,7 +101,7 @@ namespace GameLauncher
                 arguments += "-skill 4 ";
 
             if (levelsDropdown.SelectedIndex > 0)
-                arguments += $"-warp {levelsDropdown.SelectedIndex + 1} ";
+                arguments += $"-warp {levelsDropdown.SelectedIndex} ";
 
             if (nomonstersCheckBox.Checked)
             {
